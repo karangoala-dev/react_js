@@ -5,6 +5,7 @@ import { useCallback,useRef } from 'react';
 function App() {
   const [notes, setNotes] = useState([]);
   const [note, setNote] = useState("");
+  // noteRef holds a reference to note, allowing us to always access the latest value without worrying about outdated closures / state value.
   const noteRef = useRef(note);
 
   //This fn is used to set the note value
