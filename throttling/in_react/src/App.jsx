@@ -1,14 +1,16 @@
 import { useState } from 'react'
 import './App.css'
-import { useCallback } from 'react';
+import { useCallback,useRef } from 'react';
 
 function App() {
   const [notes, setNotes] = useState([]);
   const [note, setNote] = useState("");
+  const noteRef = useRef(note);
 
   //This fn is used to set the note value
   const handleChange = (e)=>{
     setNote(e.target.value);
+    noteRef.current = e.target.value;
   }
 
   //This factory fn will throttleise any callback fn passed to it
@@ -16,9 +18,12 @@ function App() {
     let lastCall = 0;
     return function(...args){
       let currentTime = Date.now();
+      console.log(currentTime - lastCall);
       if(currentTime - lastCall < delay){
+        console.log("Not Adding")
         return;
       }
+      console.log("Adding since delay is passed", ...args);
       lastCall = currentTime;
       fn(...args);
     };
@@ -26,12 +31,13 @@ function App() {
 
   //This fn is used to add the current note value to the notes array
   const handleClick = () => {
-    setNotes([...notes, note]);
+    setNotes(prevNotes => [...prevNotes, noteRef.current])
+
     // setNote("");
-  }
+  };
 
   //This fn is a throttled version of the handleClick fn.
-  const throttledHandleClick = throttled(handleClick, 2000);
+  const throttledHandleClick = useCallback(throttled(handleClick, 2000), []);
 
   return (
     <>
