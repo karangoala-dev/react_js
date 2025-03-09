@@ -34,11 +34,11 @@ function App() {
   const handleClick = () => {
     setNotes(prevNotes => [...prevNotes, noteRef.current]);
 
-    // setNote("");
+    setNote("");
   };
 
   //This fn is a throttled version of the handleClick fn.
-  const throttledHandleClick = useCallback(throttled(handleClick, 2000), []);
+  const throttledHandleClick = useCallback(throttled(handleClick, 10000), []);
 
   return (
     <>
