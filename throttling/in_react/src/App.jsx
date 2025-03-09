@@ -32,7 +32,7 @@ function App() {
 
   //This fn is used to add the current note value to the notes array
   const handleClick = () => {
-    setNotes(prevNotes => [...prevNotes, noteRef.current])
+    setNotes(prevNotes => [...prevNotes, noteRef.current]);
 
     // setNote("");
   };
