@@ -7,6 +7,13 @@ function App() {
   const[count, setCount] = useState(0);
 
   //3-> This is a factory method which returns debounced version of any function
+  /*******************/
+  //How does clearTimeout(timerId) get the reference to the previous timerId?
+  //When you call a debounced function, it maintains its own closure over timerId.
+  // The timerId variable is declared in the outer function (debounced).
+  // Every time the returned function is executed, it references the same timerId stored in memory.
+  // This means that when clearTimeout(timerId) is called, it clears the previous timer before setting a new one.
+  /*******************/
   const debounced = (fn, delay) => {
     let timerId;
     return (...args) => {
