@@ -1,13 +1,15 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import useScreenSize from './hooks/useScreenSize'
 
 function App() {
 
+  const [width, height] = useScreenSize();
+
   return (
     <>
-
+      <h1>Width : {width}</h1>
+      <h1>Height : {height}</h1>
     </>
   )
 }
