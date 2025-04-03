@@ -21,24 +21,6 @@ const UseEffectComponent = () => {
       // })
     }
     callApi();
-  }, [page]);
-
-  useEffect(()=>{
-    const observer = new IntersectionObserver((entries)=>{
-      //If bottom div is visible, we reached bottom
-      if(entries[0].isIntersecting == true){
-        setIsBottom(true);
-        setPage(page + 1);
-      }
-    }, {threshold: 1.0});
-
-    if(bottomRef.current != null){
-      observer.observe(bottomRef.current);
-    }
-
-    return ()=>{
-      observer.disconnect();
-    }
   }, []);
 
   return (
@@ -46,18 +28,16 @@ const UseEffectComponent = () => {
       <div className="navbar">
         <NavLink to="/">Home</NavLink>
       </div>
-      <div className="body">
-        {data.length == 0 ? <span>Loading...</span> : data.map((item)=>{
-          return (
-            <div className='list-item'>
-            <div>Title: {item.title}</div>
-            <div>Body: {item.body}</div>
-            </div>
-          )
-        })}
-      </div>
-      <div ref={bottomRef} >
-      </div>
+        <div className="body">
+          {data.length == 0 ? <span>Loading...</span> : data.map((item)=>{
+            return (
+              <div className='list-item'>
+              <div>Title: {item.title}</div>
+              <div>Body: {item.body}</div>
+              </div>
+            )
+          })}
+        </div>
     </div>
   )
 }
