@@ -18,3 +18,7 @@
     background-color: gray;
     color: navy;
 }
+
+.hidden{
+    display: none;
+}
