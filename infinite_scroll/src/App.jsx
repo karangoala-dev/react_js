@@ -1,25 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useRef, useEffect } from 'react'
 import './App.css'
-import { useEffect } from 'react'
 
 function App() {
   const [data, setData] = useState([])
   const [page, setPage] = useState(1);
+  const bottomMostDiv = useRef(null);
+
+  const callBackFunction = (entries) => {
+    if (entries[0].isIntersecting) {
+      console.log("Bottom div is visible now.");
+    }
+  }
+  const intersectionObserverOptions = {
+    threshold: 0.1
+  }
 
   useEffect(() => {
     let apiCall = async function () {
-      let apiCallPromise = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=100&_page=${page}`);
+      let apiCallPromise = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${page}`);
       let response = await apiCallPromise.json();
       setData(response);
     }
 
     apiCall();
+  }, [page]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(callBackFunction, intersectionObserverOptions);
+    if (bottomMostDiv.current != null) {
+      observer.observe(bottomMostDiv.current);
+    }
+
+    return(()=>{
+      if(bottomMostDiv.current){
+        observer.unobserve(bottomMostDiv.current);
+      }
+    });
   }, []);
 
   if (data.length == 0) {
-    return (<><h2>Loading...</h2></>);
+    return (<div className='main'><h2>Loading...</h2></div>);
   }
   return (<div className='main'>
     <h1 className='h'>Infinite Scroll component</h1>
@@ -37,6 +57,9 @@ function App() {
           </div>
         )
       })}
+      <div ref={bottomMostDiv}>
+        Loading...
+      </div>
     </div>
   </div>
   );
