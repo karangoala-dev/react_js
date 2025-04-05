@@ -2,34 +2,44 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { useEffect } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [data, setData] = useState([])
+  const [page, setPage] = useState(1);
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  useEffect(() => {
+    let apiCall = async function () {
+      let apiCallPromise = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=100&_page=${page}`);
+      let response = await apiCallPromise.json();
+      setData(response);
+    }
+
+    apiCall();
+  }, []);
+
+  if (data.length == 0) {
+    return (<><h2>Loading...</h2></>);
+  }
+  return (<div className='main'>
+    <h1 className='h'>Infinite Scroll component</h1>
+    <div className='main'>
+      {data.map((item) => {
+        return (
+          <div className='card-main'>
+            <div>
+              {item.title}
+            </div>
+            <br />
+            <div>
+              {item.body}
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  </div>
+  );
 }
 
 export default App
