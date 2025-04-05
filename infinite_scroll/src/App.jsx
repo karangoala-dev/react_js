@@ -5,10 +5,14 @@ function App() {
   const [data, setData] = useState([])
   const [page, setPage] = useState(1);
   const bottomMostDiv = useRef(null);
+  const maxPages = 10;
 
   const callBackFunction = (entries) => {
-    if (entries[0].isIntersecting) {
+    if (entries[0].isIntersecting && data.length != 0) {
       console.log("Bottom div is visible now.");
+      if(page < 10){
+        setPage(page + 1);
+      }
     }
   }
   const intersectionObserverOptions = {
@@ -19,7 +23,7 @@ function App() {
     let apiCall = async function () {
       let apiCallPromise = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${page}`);
       let response = await apiCallPromise.json();
-      setData(response);
+      setData((prevData)=>[...prevData, ...response]);
     }
 
     apiCall();
@@ -31,15 +35,21 @@ function App() {
       observer.observe(bottomMostDiv.current);
     }
 
-    return(()=>{
-      if(bottomMostDiv.current){
+    return (() => {
+      if (bottomMostDiv.current) {
         observer.unobserve(bottomMostDiv.current);
       }
     });
-  }, []);
+  }, [data]);
 
   if (data.length == 0) {
-    return (<div className='main'><h2>Loading...</h2></div>);
+    return (
+    <div className='main'>
+      <h2>Loading...</h2>
+      <div ref={bottomMostDiv} style={{ height: "50px", background: "lightgray" }}>
+        Loading...
+      </div>
+    </div>);
   }
   return (<div className='main'>
     <h1 className='h'>Infinite Scroll component</h1>
@@ -57,8 +67,10 @@ function App() {
           </div>
         )
       })}
-      <div ref={bottomMostDiv}>
-        Loading...
+      <div ref={bottomMostDiv} style={{ height: "50px"}}>
+        {
+          page < maxPages ? <div>Loading...</div> : <div>End of page</div>
+        }
       </div>
     </div>
   </div>
