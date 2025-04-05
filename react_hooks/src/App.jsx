@@ -19,6 +19,10 @@ function App() {
         <button>Go to component</button>
       </Link>
 
+      <h2>useRef</h2>
+      <Link to="/useref">
+        <button>Go to component</button>
+      </Link>
     </>
   )
 }

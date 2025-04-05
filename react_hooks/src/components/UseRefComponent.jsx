@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useRef } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const UseRefComponent = () => {
     const [count, setCount] = useState(0);
@@ -16,6 +17,9 @@ const UseRefComponent = () => {
     console.log("Re-rendering");
     return (
         <div>
+            <div className="navbar">
+                <NavLink to="/">Home</NavLink>
+            </div>
             <h2>Changing useref value wont re-render the component but changing usestate value will re-render component</h2>
             <br></br>
             <h5>Count state variable : {count}</h5>
