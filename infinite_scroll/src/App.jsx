@@ -29,9 +29,16 @@ function App() {
     apiCall();
   }, [page]);
 
+  //this use effect has data as a dependency since when initially created, the observer is observing the null bottomMostDiv, since data is not fetched and 
+  //even if we had the same div for case when data.length = 0, still it would refer to the div in case when data is empty.
+  //Therefore, we need to add data as a dependency
+  //basically, useref wala variable got updated. But, the closure in the useeffect still has access to the previous useref wala variable so we need data as a 
+  //dependency.
+  /************CHECK THE SOLUTION MENTIONED BELOW TOO************/
   useEffect(() => {
     const observer = new IntersectionObserver(callBackFunction, intersectionObserverOptions);
-    if (bottomMostDiv.current != null) {
+    const currentRef = bottomMostDiv.current;
+    if (currentRef) {
       observer.observe(bottomMostDiv.current);
     }
 
@@ -46,9 +53,7 @@ function App() {
     return (
     <div className='main'>
       <h2>Loading...</h2>
-      <div ref={bottomMostDiv} style={{ height: "50px", background: "lightgray" }}>
-        Loading...
-      </div>
+      <div ref={bottomMostDiv} style={{ height: "50px"}}></div>
     </div>);
   }
   return (<div className='main'>
@@ -77,4 +82,68 @@ function App() {
   );
 }
 
-export default App
+export default App;
+
+
+//Another solution using usecallback -> yet to test
+// import { useState, useCallback } from 'react';
+
+// function App() {
+//   const [data, setData] = useState([]);
+//   const [page, setPage] = useState(1);
+//   const maxPages = 10;
+
+//   const callBackFunction = (entries) => {
+//     if (entries[0].isIntersecting) {
+//       console.log('Bottom div is visible now');
+//       if (page < maxPages) setPage((p) => p + 1);
+//     }
+//   };
+
+//   const observerCallbackRef = useCallback((node) => {
+//     if (!node) return; // null during cleanup
+
+//     const observer = new IntersectionObserver(callBackFunction, {
+//       threshold: 0.1,
+//     });
+
+//     observer.observe(node);
+
+//     return () => {
+//       observer.disconnect(); // Clean up observer when node unmounts
+//     };
+//   }, [callBackFunction]); // Only depends on the stable callback
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       const res = await fetch(
+//         `https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${page}`
+//       );
+//       const json = await res.json();
+//       setData((prev) => [...prev, ...json]);
+//     };
+
+//     fetchData();
+//   }, [page]);
+
+//   return (
+//     <div>
+//       {data.map((item) => (
+//         <div key={item.id}>
+//           <h4>{item.title}</h4>
+//           <p>{item.body}</p>
+//         </div>
+//       ))}
+//       {page < maxPages ? (
+//         <div
+//           ref={observerCallbackRef}
+//           style={{ height: '60px', background: '#eee' }}
+//         >
+//           Loading...
+//         </div>
+//       ) : (
+//         <div style={{ height: '60px' }}>End of list</div>
+//       )}
+//     </div>
+//   );
+// }
