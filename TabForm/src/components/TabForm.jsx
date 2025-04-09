@@ -51,6 +51,9 @@ const TabForm = () => {
     {
       name: "Settings",
       component: Settings,
+      validate: function(){
+        return true;
+      }
     },
   ];
 
