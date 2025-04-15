@@ -4,10 +4,10 @@
   height: 50px;
 }
 
-.password-input{
+.password-input, .password-btn{
   height: 100%;
-}
-
-.password-btn{
-  height: 100%;
+  /* The CSS box-sizing property allows us to include the padding and border in an element's total width and height. */
+  /* https://www.w3schools.com/css/css3_box-sizing.asp */
+  box-sizing: border-box;
+  font-size: large;
 }
