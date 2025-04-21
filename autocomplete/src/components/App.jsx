@@ -5,11 +5,17 @@ function App() {
   const [prefix, setPrefix] = useState("");
   const [results, setResults] = useState([]);
   const [showResults, setShowResults] = useState(false);
+  const [cache, setCache] = useState({});
   const fetchApi = async()=>{
     let response = await fetch(`https://dummyjson.com/recipes/search?q=${prefix}`);
     let data = await response.json();
     setResults(data.recipes);
+    setCache((prevCache) => ({...prevCache, [prefix]: data.recipes}));
   }
+
+  useEffect(()=>{
+    console.log("CACHE -> " + JSON.stringify(cache));
+  }, [cache]);
 
   //Debouncing
   //here, if an API call is made initially, then a timer is set for a delay 
