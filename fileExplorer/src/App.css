@@ -2,9 +2,11 @@
   text-align: center;
   /* display: flex;
   flex-direction: column; */
+  font-size: larger;
 }
 
 .container{
   text-align: left;
   padding-left: 15px;
+  cursor: pointer;
 }
