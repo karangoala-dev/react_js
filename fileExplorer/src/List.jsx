@@ -6,7 +6,7 @@ const List = ({list}) => {
                 <div key={node.id}>
                     <span>{node.name}</span>
                     {/* recursive step */}
-                    {node?.children && <List list={node.children}/>}
+                    {node && node.children.length != 0 && <List list={node.children}/>}
                 </div>
                 )
             })}

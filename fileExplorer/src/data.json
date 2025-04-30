@@ -42,5 +42,11 @@
                 ]
             }
         ]
+    },
+    {
+        "id": 7,
+        "name": ".gitignore",
+        "isFolder": false,
+        "children": []
     }
 ]
