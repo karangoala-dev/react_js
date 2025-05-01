@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const List = ({ list }) => {
+const List = ({ list, addFolder }) => {
     const[expandedObj, setExpandedObj] = useState({});
     return (
         <div className="container">
@@ -13,11 +13,11 @@ const List = ({ list }) => {
                             {item.name}
                         </span>
                         {/* render add/remove folder buttons here, add button only if it is a folder*/}
-                        {item.isFolder && <img className="icon" src="https://pic.onlinewebfonts.com/svg/img_523710.svg"/>}
+                        {item.isFolder && <img className="icon" src="https://pic.onlinewebfonts.com/svg/img_523710.svg" onClick={()=>addFolder(item.id)}/>}
                         <img className="icon" src="https://cdn-icons-png.flaticon.com/512/58/58360.png"/>
                     </div>
                     {/* recursively render children items here */}
-                    {expandedObj[item.name] && item.children && <List list={item.children} />}
+                    {expandedObj[item.name] && item.children && <List list={item.children} addFolder={addFolder}/>}
                 </div>
             )}
         </div>)
