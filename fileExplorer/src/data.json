@@ -5,6 +5,7 @@
         "isFolder": true,
         "children": [
             {
+                "id": 8,
                 "name": "index.html",
                 "isFolder": false,
                 "children": []
