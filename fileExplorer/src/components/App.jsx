@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-import { useState } from 'react'
-import './App.css'
-import json from './data.json';
+import { useState } from 'react';
+import './App.css';
+import json from '../data.json';
 import List from './List';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className='main'>
-      <h1 className='header'>File Explorer</h1>
+      <h1 className='title'>File Explorer</h1>
       <List list={data}/>
     </div>
   )
