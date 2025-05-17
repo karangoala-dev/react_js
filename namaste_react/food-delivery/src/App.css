@@ -1,0 +1,51 @@
+*{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #E0E0E0;
+    padding: 0px 10px;
+    align-items: center;
+    font-size: larger;
+}
+
+#logo{
+    width: 100px;
+}
+
+.nav-items > ul{
+    display: flex;
+    list-style: none;
+}
+
+.nav-items > ul > li {
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.body{
+    display: flex;
+    background-color: #FDF9F3;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 5px;
+}
+
+.search > input{
+    width: 700px;
+    height: 50px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: large;
+}
+
+.restaurant-card{
+    height: 300px;
+}
+
+.restaurant-image{
+    width: 200px;
+}

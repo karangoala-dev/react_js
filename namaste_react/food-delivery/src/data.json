@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "pic": "https://media.istockphoto.com/id/1442417585/photo/person-getting-a-piece-of-cheesy-pepperoni-pizza.jpg?s=612x612&w=0&k=20&c=k60TjxKIOIxJpd4F4yLMVjsniB4W1BpEV4Mi_nb4uJU=",
+    "title": "Pizza Palace",
+    "rating": "4.5",
+    "priceForTwo": "$20",
+    "cuisine": "Italian"
+  },
+  {
+    "id": 2,
+    "pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_bV4UI0Eu4Dn0mGIasrPjiuohtLLFc6unXw&s",
+    "title": "Sakura Sushi",
+    "rating": "4.7",
+    "priceForTwo": "$35",
+    "cuisine": "Japanese"
+  },
+  {
+    "id": 3,
+    "pic": "https://images.unsplash.com/photo-1550547660-d9450f859349",
+    "title": "Burger Hub",
+    "rating": "4.2",
+    "priceForTwo": "$15",
+    "cuisine": "American"
+  },
+  {
+    "id": 4,
+    "pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPRoImMB-rtdCxrHLSQXDwiDsCcY6z0ML5Hg&s",
+    "title": "Curry Express",
+    "rating": "4.3",
+    "priceForTwo": "$18",
+    "cuisine": "Indian"
+  },
+  {
+    "id": 5,
+    "pic": "https://hips.hearstapps.com/hmg-prod/images/chicken-tacos-index-659443ccdaac5.jpg?crop=0.502xw:1.00xh;0.441xw,0&resize=1200:*",
+    "title": "Taco Fiesta",
+    "rating": "4.6",
+    "priceForTwo": "$22",
+    "cuisine": "Mexican"
+  },
+  {
+    "id": 6,
+    "pic": "https://assets.epicurious.com/photos/5988e3458e3ab375fe3c0caf/1:1/w_3607,h_3607,c_limit/How-to-Make-Chicken-Alfredo-Pasta-hero-02082017.jpg",
+    "title": "Pasta Street",
+    "rating": "4.4",
+    "priceForTwo": "$25",
+    "cuisine": "Italian"
+  },
+  {
+    "id": 7,
+    "pic": "https://imgmediagumlet.lbb.in/media/2024/04/660bbdb3f88c495322e4f08d_1712045491416.jpg",
+    "title": "Ramen House",
+    "rating": "4.8",
+    "priceForTwo": "$28",
+    "cuisine": "Japanese"
+  },
+  {
+    "id": 8,
+    "pic": "https://herbivorecucina.com/wp-content/uploads/2023/08/Steamed-Dim-Sum-3-scaled.jpg",
+    "title": "Dim Sum Corner",
+    "rating": "4.1",
+    "priceForTwo": "$19",
+    "cuisine": "Chinese"
+  },
+  {
+    "id": 9,
+    "pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_bV4UI0Eu4Dn0mGIasrPjiuohtLLFc6unXw&s",
+    "title": "Sushi Palace",
+    "rating": "4.7",
+    "priceForTwo": "$35",
+    "cuisine": "Japanese"
+  },
+  {
+    "id": 10,
+    "pic": "https://images.unsplash.com/photo-1550547660-d9450f859349",
+    "title": "Burger Palace",
+    "rating": "4.2",
+    "priceForTwo": "$15",
+    "cuisine": "American"
+  },
+  {
+    "id": 11,
+    "pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPRoImMB-rtdCxrHLSQXDwiDsCcY6z0ML5Hg&s",
+    "title": "Naan Lovers",
+    "rating": "4.3",
+    "priceForTwo": "$18",
+    "cuisine": "Indian"
+  },
+  {
+    "id": 12,
+    "pic": "https://hips.hearstapps.com/hmg-prod/images/chicken-tacos-index-659443ccdaac5.jpg?crop=0.502xw:1.00xh;0.441xw,0&resize=1200:*",
+    "title": "Taco Days",
+    "rating": "4.6",
+    "priceForTwo": "$22",
+    "cuisine": "Mexican"
+  }
+]
