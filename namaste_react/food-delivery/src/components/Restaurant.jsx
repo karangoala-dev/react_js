@@ -5,11 +5,11 @@ const Restaurant = ({ pic, title, rating, priceForTwo, cuisine }) => {
             <div className="details">
                 <div className="upper">
                     <span>{title}</span>
-                    <span>{rating}</span>
+                    <span>{rating}⭐️</span>
                 </div>
                 <div className="lower">
                     <span>{cuisine}</span>
-                    <span>{priceForTwo}</span>
+                    <span>Cost for two: {priceForTwo}</span>
                 </div>
             </div>
         </div>

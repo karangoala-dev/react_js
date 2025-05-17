@@ -29,9 +29,10 @@
 .body{
     display: flex;
     background-color: #FDF9F3;
-    /* align-items: center; */
-    justify-content: center;
+    align-items: center;
+    /* justify-content: center; */
     padding: 5px;
+    flex-direction: column;
 }
 
 .search > input{
@@ -43,9 +44,39 @@
 }
 
 .restaurant-card{
-    height: 300px;
+    height: 350px;
+    width: 300px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 30px;
+    padding: 5px;
+}
+
+.restaurant-card:hover {
+    cursor: pointer;
+    border: 2px solid black;
 }
 
 .restaurant-image{
-    width: 200px;
+    width: 300px;
+    height: 300px;
 }
+
+.restaurant-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.upper{
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lower{
+    font-size: medium;
+    display: flex;
+    justify-content: space-between;
+}
+
