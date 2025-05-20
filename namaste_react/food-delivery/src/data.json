@@ -11,7 +11,7 @@
     "id": 2,
     "pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_bV4UI0Eu4Dn0mGIasrPjiuohtLLFc6unXw&s",
     "title": "Sakura Sushi",
-    "rating": "4.7",
+    "rating": "3.7",
     "priceForTwo": "$35",
     "cuisine": "Japanese"
   },
@@ -91,7 +91,7 @@
     "id": 12,
     "pic": "https://hips.hearstapps.com/hmg-prod/images/chicken-tacos-index-659443ccdaac5.jpg?crop=0.502xw:1.00xh;0.441xw,0&resize=1200:*",
     "title": "Taco Days",
-    "rating": "4.6",
+    "rating": "3.6",
     "priceForTwo": "$22",
     "cuisine": "Mexican"
   }

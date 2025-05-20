@@ -1,15 +1,21 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { use, useState } from "react";
 import json from '../data.json';
 import Restaurant from './Restaurant';
 
 const Body = () => {
     const[searchKey, setSearchKey] = useState("");
     const[data, setData] = useState(json);
+
+    const useTopRated = function(){
+        setData(data.filter((item) => item.rating > 4.0));
+    }
+
     return (
         <div className="body">
             <div className="search">
                 <input type="text" placeholder="Search restaurant, dish, anything ..." value={searchKey} onChange={(e)=>setSearchKey(e.target.value)}></input>
+                <button className="filter-btn" onClick={useTopRated}>Top rated</button>
             </div>
             <div className="restaurant-container">
                 {
