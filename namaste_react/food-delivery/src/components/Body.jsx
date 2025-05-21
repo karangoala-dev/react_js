@@ -12,7 +12,7 @@ const Body = () => {
     }, []);
 
     const fetchData = async () => {
-        const promise = await fetch('https://www.swiggy.com/dapi/restaurants/search/v3?lat=12.9715987&lng=77.5945627&str=Biryani&trackingId=4b1f8833-85ab-ba8b-069a-82535f1a7b46&submitAction=ENTER&queryUniqueId=56eac245-bd21-54c4-c0ef-cd0c908082d7');
+        const promise = await fetch('https://dummyjson.com/test');
         const response = await promise.json();
         console.log(response);
     }
