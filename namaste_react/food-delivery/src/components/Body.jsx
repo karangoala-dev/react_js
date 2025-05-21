@@ -2,18 +2,22 @@
 import { useEffect, useState } from "react";
 import json from '../data.json';
 import Restaurant from './Restaurant';
+import Shimmer from "./Shimmer";
 
 const Body = () => {
     const[searchKey, setSearchKey] = useState("");
     const[data, setData] = useState(json);
+    const[dataLoaded, setDataLoaded] = useState(false);
 
     useEffect(()=>{
         fetchData();
     }, []);
 
     const fetchData = async () => {
+        //Here I am not actually using the api response for rendering data on screen just using the api call delay to test shimmer ui
         const promise = await fetch('https://dummyjson.com/test');
         const response = await promise.json();
+        setDataLoaded(true);
         console.log(response);
     }
 
@@ -21,7 +25,8 @@ const Body = () => {
         setData(data.filter((item) => item.rating > 4.0));
     }
 
-    return (
+    //Conditional rendering
+    return !dataLoaded ? <Shimmer/> : (
         <div className="body">
             <div className="search">
                 <input type="text" placeholder="Search restaurant, dish, anything ..." value={searchKey} onChange={(e)=>setSearchKey(e.target.value)}></input>
