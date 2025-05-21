@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import {HEADER_LOGO} from '../utils/constants';
 
 const Header = () => {
+    const[loggedIn, setLoggedIn] = useState(false);
+
     return (
         <div className="header">
             <div className="logo">
@@ -12,6 +15,7 @@ const Header = () => {
                     <li>Home</li>
                     <li>About us</li>
                     <li>Cart</li>
+                    <button className="login-btn" onClick={()=>setLoggedIn(!loggedIn)}>{loggedIn ? 'Logout' : 'Login'}</button>
                 </ul>
             </div>
         </div>
