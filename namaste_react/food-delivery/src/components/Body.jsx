@@ -7,6 +7,7 @@ import Shimmer from "./Shimmer";
 const Body = () => {
     const[searchKey, setSearchKey] = useState("");
     const[data, setData] = useState(json);
+    const[filteredData, setFilteredData] = useState(json);
     const[dataLoaded, setDataLoaded] = useState(false);
 
     useEffect(()=>{
@@ -25,14 +26,18 @@ const Body = () => {
         setData(data.filter((item) => item.rating > 4.0));
     }
 
+    const search = ()=>{
+        const result = data.filter((restaurant) => restaurant.title.toLowerCase().includes(searchKey.toLowerCase()));
+        setData(result);
+    }
+
+    console.log("render");
     //Conditional rendering
     return !dataLoaded ? <Shimmer/> : (
         <div className="body">
             <div className="search">
                 <input type="text" placeholder="Search restaurant, dish, anything ..." value={searchKey} onChange={(e)=>setSearchKey(e.target.value)}></input>
-                <button className="filter-btn" onClick={()=>{
-                    console.log(searchKey)
-                }}>Search</button>
+                <button className="filter-btn" onClick={search}>Search</button>
                 <button className="filter-btn" onClick={useTopRated}>Top rated</button>
             </div>
             <div className="restaurant-container">
