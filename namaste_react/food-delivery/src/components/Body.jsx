@@ -30,6 +30,9 @@ const Body = () => {
         <div className="body">
             <div className="search">
                 <input type="text" placeholder="Search restaurant, dish, anything ..." value={searchKey} onChange={(e)=>setSearchKey(e.target.value)}></input>
+                <button className="filter-btn" onClick={()=>{
+                    console.log(searchKey)
+                }}>Search</button>
                 <button className="filter-btn" onClick={useTopRated}>Top rated</button>
             </div>
             <div className="restaurant-container">
