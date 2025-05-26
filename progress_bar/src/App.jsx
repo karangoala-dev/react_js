@@ -10,7 +10,7 @@ function App() {
     for(let i = 0; i <= 10; i++){
       setTimeout(()=>{
         setProgress(10 * i);
-      }, 1000 * i);
+      }, 500 * i);
     }
   }, []);
 

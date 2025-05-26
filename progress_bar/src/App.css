@@ -11,4 +11,5 @@
 
 .inner{
   background-color: green;
+  white-space: nowrap;
 }
