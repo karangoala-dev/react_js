@@ -28,7 +28,7 @@ const Body = () => {
 
     const search = ()=>{
         const result = data.filter((restaurant) => restaurant.title.toLowerCase().includes(searchKey.toLowerCase()));
-        setData(result);
+        setFilteredData(result);
     }
 
     console.log("render");
@@ -42,7 +42,7 @@ const Body = () => {
             </div>
             <div className="restaurant-container">
                 {
-                    data && data.map((item) => <Restaurant key={item.id} pic={item.pic} title={item.title} rating={item.rating} priceForTwo={item.priceForTwo} cuisine={item.cuisine}/>)
+                    filteredData && filteredData.map((item) => <Restaurant key={item.id} pic={item.pic} title={item.title} rating={item.rating} priceForTwo={item.priceForTwo} cuisine={item.cuisine}/>)
                 }
             </div>
         </div>
