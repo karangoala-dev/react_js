@@ -1,0 +1,10 @@
+*{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.main{
+  text-align: center;
+}
+.digit{
+  height: 50px;
+  width: 50px;
+}
