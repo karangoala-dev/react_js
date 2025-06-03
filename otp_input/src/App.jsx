@@ -26,7 +26,12 @@ function App() {
       </h1>
       <div className='otp-secn'>
         {
-          inputArr.map((item, i) => <input key={i} className='digit' value={inputArr[i]} onChange={(e)=>handleChange(e.target.value, i)}/>)
+          inputArr.map((item, i) => 
+            <input key={i} 
+                  className='digit' 
+                  value={inputArr[i]} 
+                  ref = {(input) => (refArr.current[i] = input)}
+                  onChange={(e)=>handleChange(e.target.value, i)}/>)
         }
       </div>
     </div>
