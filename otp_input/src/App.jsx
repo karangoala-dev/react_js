@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './App.css'
 
 
@@ -7,6 +7,7 @@ const OTP_DIGITS = 6;
 function App() {
   //initialise an empty array with blank value
   const[inputArr, setInputArr] = useState(new Array(OTP_DIGITS).fill(""));
+  const refArr = useRef([]);
 
   const handleChange = (value, index) => {
     if(isNaN(value)){
