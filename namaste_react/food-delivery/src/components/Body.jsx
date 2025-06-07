@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import json from '../data.json';
 import Restaurant from './Restaurant';
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     const[searchKey, setSearchKey] = useState("");
@@ -42,7 +43,7 @@ const Body = () => {
             </div>
             <div className="restaurant-container">
                 {
-                    filteredData && filteredData.map((item) => <Restaurant key={item.id} pic={item.pic} title={item.title} rating={item.rating} priceForTwo={item.priceForTwo} cuisine={item.cuisine}/>)
+                    filteredData && filteredData.map((item) => <Link to={`/restaurant/${item.id}`}><Restaurant key={item.id} pic={item.pic} title={item.title} rating={item.rating} priceForTwo={item.priceForTwo} cuisine={item.cuisine}/></Link>)
                 }
             </div>
         </div>
