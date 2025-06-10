@@ -43,7 +43,7 @@ const Body = () => {
             </div>
             <div className="restaurant-container">
                 {
-                    filteredData && filteredData.map((item) => <Link to={`/restaurant/${item.id}`}><Restaurant key={item.id} pic={item.pic} title={item.title} rating={item.rating} priceForTwo={item.priceForTwo} cuisine={item.cuisine}/></Link>)
+                    filteredData && filteredData.map((item) => <Link  key={item.id} to={`/restaurant/${item.id}`}><Restaurant pic={item.pic} title={item.title} rating={item.rating} priceForTwo={item.priceForTwo} cuisine={item.cuisine}/></Link>)
                 }
             </div>
         </div>

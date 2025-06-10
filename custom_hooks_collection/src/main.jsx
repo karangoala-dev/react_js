@@ -5,6 +5,7 @@ import App from './App.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import UseCounterComponent from './components/UseCounterComponent.jsx';
 import UseFetchComponent from './components/UseFetchComponent.jsx';
+import UseOnlineStatusComponent from './components/UseOnlineStatusComponent.jsx';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -12,6 +13,7 @@ createRoot(document.getElementById('root')).render(
       <Route path='/' element={<App />} />
       <Route path='/usecounter' element={<UseCounterComponent />} />
       <Route path='/usefetch' element={<UseFetchComponent />} />
+      <Route path='/useonlinestatus' element={<UseOnlineStatusComponent/>}/>
     </Routes>
   </BrowserRouter>
 )
