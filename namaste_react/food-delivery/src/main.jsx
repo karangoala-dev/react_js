@@ -7,6 +7,18 @@ import Error from './Pages/Error.jsx';
 import Body from './components/Body.jsx';
 import Cart from './Pages/Cart.jsx';
 import RestaurantMenu from './Pages/RestaurantMenu.jsx';
+import { lazy, Suspense } from 'react';
+import Loading from './Pages/Loading.jsx';
+
+//Lazy loading
+//Chunking
+//Dynamic Bundling
+//Code splitting
+//On demand loading
+//Dynamic import
+//this line is used to implement the above concept
+const Instamart = lazy(() => import('./components/Instamart.jsx'));
+
 
 //define the app router config using createBrowserRouter
 const appRouter = createBrowserRouter([
@@ -29,6 +41,10 @@ const appRouter = createBrowserRouter([
       {
         path: '/restaurant/:resId',
         element: <RestaurantMenu/>
+      },
+      {
+        path : '/instamart',
+        element: <Suspense fallback={<Loading/>}> <Instamart/> </Suspense>
       }
     ],
     errorElement: <Error/>
