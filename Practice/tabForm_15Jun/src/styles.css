@@ -1,0 +1,33 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  border: 1px solid black;
+  height: 300px;
+  width: 100%;
+}
+.tab-headers-container {
+  height: 30px;
+  border-bottom: 1px solid black;
+  display: flex;
+}
+.tab-header {
+  border: 1px solid black;
+  padding: 5px;
+}
+.item {
+  margin-top: 5px;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 10px;
+}
+.activeTab {
+  background-color: aqua;
+}
+.interests {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Profile from "./Profile";
 import Interests from "./Interests";
 import Settings from "./Settings";
@@ -71,7 +71,7 @@ const TabForm = () => {
   //   console.log(data);
   // }, [data]);
   const handleTabClick = (ind) => {
-    setActiveComponent((prevState) => ind);
+    setActiveComponent(ind);
   };
 
   const [activeComponent, setActiveComponent] = useState(0);

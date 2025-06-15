@@ -1,4 +1,4 @@
-const json = {
+{
   "Profile": {
     "component": "Profile",
     "name": "John Doe",
@@ -15,6 +15,3 @@ const json = {
     "darkMode": true
   }
 }
-
-const arr = Object.keys(json);
-console.log(arr.includes("Interests"));
