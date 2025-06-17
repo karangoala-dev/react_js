@@ -1,0 +1,35 @@
+.main{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.chips-container{
+  margin: 10px ;
+  height: 500px;
+  width: 500px;
+  padding: 5px;
+  border: 1px solid black;
+  display: flex;
+}
+.text-ip{
+  width: 200px;
+  height: 20px;
+}
+.chip{
+  font-size: small;
+  max-height: 20px;
+  padding: 2px;
+  height: auto;
+  width: auto;
+  border: 0px;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 7px;
+  background-color: gray;
+}
+.del-btn{
+  background-color: transparent;
+  border: none;
+}
