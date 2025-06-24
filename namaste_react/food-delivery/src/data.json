@@ -5,7 +5,8 @@
     "title": "Pizza Palace",
     "rating": "4.5",
     "priceForTwo": "$20",
-    "cuisine": "Italian"
+    "cuisine": "Italian",
+    "highlyRated": true
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "title": "Sakura Sushi",
     "rating": "3.7",
     "priceForTwo": "$35",
-    "cuisine": "Japanese"
+    "cuisine": "Japanese",
+    "highlyRated": false
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "title": "Burger Hub",
     "rating": "4.2",
     "priceForTwo": "$15",
-    "cuisine": "American"
+    "cuisine": "American",
+    "highlyRated": true
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "title": "Curry Express",
     "rating": "4.3",
     "priceForTwo": "$18",
-    "cuisine": "Indian"
+    "cuisine": "Indian",
+    "highlyRated": false
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "title": "Taco Fiesta",
     "rating": "4.6",
     "priceForTwo": "$22",
-    "cuisine": "Mexican"
+    "cuisine": "Mexican",
+    "highlyRated": true
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "title": "Pasta Street",
     "rating": "4.4",
     "priceForTwo": "$25",
-    "cuisine": "Italian"
+    "cuisine": "Italian",
+    "highlyRated": false
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "title": "Ramen House",
     "rating": "4.8",
     "priceForTwo": "$28",
-    "cuisine": "Japanese"
+    "cuisine": "Japanese",
+    "highlyRated": true
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "title": "Dim Sum Corner",
     "rating": "4.1",
     "priceForTwo": "$19",
-    "cuisine": "Chinese"
+    "cuisine": "Chinese",
+    "highlyRated": false
   },
   {
     "id": 9,
@@ -69,7 +77,8 @@
     "title": "Sushi Palace",
     "rating": "4.7",
     "priceForTwo": "$35",
-    "cuisine": "Japanese"
+    "cuisine": "Japanese",
+    "highlyRated": true
   },
   {
     "id": 10,
@@ -77,7 +86,8 @@
     "title": "Burger Palace",
     "rating": "4.2",
     "priceForTwo": "$15",
-    "cuisine": "American"
+    "cuisine": "American",
+    "highlyRated": false
   },
   {
     "id": 11,
@@ -85,7 +95,8 @@
     "title": "Naan Lovers",
     "rating": "4.3",
     "priceForTwo": "$18",
-    "cuisine": "Indian"
+    "cuisine": "Indian",
+    "highlyRated": true
   },
   {
     "id": 12,
@@ -93,6 +104,7 @@
     "title": "Taco Days",
     "rating": "3.6",
     "priceForTwo": "$22",
-    "cuisine": "Mexican"
+    "cuisine": "Mexican",
+    "highlyRated": false
   }
 ]
