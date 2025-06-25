@@ -58,7 +58,7 @@
 .restaurant-card{
     height: 350px;
     width: 300px;
-    border: 1px solid gray;
+
     border-radius: 5px;
     margin: 30px;
     padding: 5px;
@@ -110,4 +110,12 @@
 .login-btn{
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.outer-card{
+    border: 1px solid black;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    color: green;
 }

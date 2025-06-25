@@ -4,6 +4,7 @@ import json from '../data.json';
 import Restaurant from './Restaurant';
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import EnhancedRestaurantCard from "./EnhancedRestaurantCard";
 
 const Body = () => {
     const[searchKey, setSearchKey] = useState("");
@@ -32,7 +33,9 @@ const Body = () => {
         setFilteredData(result);
     }
 
-    console.log("render");
+    //using the higher order component (HOC)
+    const WithHighlyRatedLabel = EnhancedRestaurantCard(Restaurant);
+    
     //Conditional rendering
     return !dataLoaded ? <Shimmer/> : (
         <div className="body">
@@ -43,7 +46,7 @@ const Body = () => {
             </div>
             <div className="restaurant-container">
                 {
-                    filteredData && filteredData.map((item) => <Link  key={item.id} to={`/restaurant/${item.id}`}><Restaurant pic={item.pic} title={item.title} rating={item.rating} priceForTwo={item.priceForTwo} cuisine={item.cuisine}/></Link>)
+                    filteredData && filteredData.map((item) => <WithHighlyRatedLabel id = {item.id} highlyRated = {item.highlyRated} pic={item.pic} title={item.title} rating={item.rating} priceForTwo={item.priceForTwo} cuisine={item.cuisine}/>)
                 }
             </div>
         </div>
